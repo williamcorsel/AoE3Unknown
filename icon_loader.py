@@ -2,6 +2,8 @@ import os
 
 from PIL import Image
 
+from utils import resource_path
+
 
 class IconLoader:
     """Icon loader class
@@ -14,13 +16,13 @@ class IconLoader:
         Args:
             path (str): Path to icons folder
         """
-        self.tc_blue = Image.open(os.path.join(path, "towncenter_blue.png"))
-        self.tc_red = Image.open(os.path.join(path, "towncenter_red.png"))
-        self.tp = Image.open(os.path.join(path, "trade.png"))
-        self.np = Image.open(os.path.join(path, "native.png"))
-        self.gold = Image.open(os.path.join(path, "gold.png"))
-        self.treasure = Image.open(os.path.join(path, "treasure.png"))
-        self.compass = Image.open(os.path.join(path, "compass.png"))
+        self.tc_blue = Image.open(resource_path(os.path.join(path, "towncenter_blue.png")))
+        self.tc_red = Image.open(resource_path(os.path.join(path, "towncenter_red.png")))
+        self.tp = Image.open(resource_path(os.path.join(path, "trade.png")))
+        self.np = Image.open(resource_path(os.path.join(path, "native.png")))
+        self.gold = Image.open(resource_path(os.path.join(path, "gold.png")))
+        self.treasure = Image.open(resource_path(os.path.join(path, "treasure.png")))
+        self.compass = Image.open(resource_path(os.path.join(path, "compass.png")))
         
     def get_compass(self, size):
         """Get resized compass image
